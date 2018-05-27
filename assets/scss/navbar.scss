@@ -1,0 +1,59 @@
+/*======================================================
+                          Navbar
+  ======================================================*/
+#navbar {
+  background: grey;
+  height: 115px;
+  line-height: 60px;
+  width: 100vw;
+  z-index: 14;
+}
+
+.nav-wrapper {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+} @media(max-width: 768px) {
+  .nav-wrapper {
+    width: 100%;
+  }
+} @media(max-width: 988px) {
+  .nav-wrapper {
+    display:none;
+  }
+}
+
+#navbar ul {
+  display: inline-block;
+  float: left;
+  list-style: none;
+  margin-top: 41px;
+  text-align: right;
+  transition: transform 0.5s ease-out;
+  -webkit-transition: transform 0.5s ease-out;
+} @media(max-width: 640px) {
+  #navbar ul {
+    display: none;
+  }
+}
+
+#navbar li {
+  display: inline-block;
+}
+
+#navbar li a {
+  color: #0d153c;
+  display: block;
+  font-size: 19px;
+  margin-left:35px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+#navbar li a:hover {
+  color: #dbb875;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+}
