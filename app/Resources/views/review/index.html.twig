@@ -7,22 +7,29 @@
         <thead>
         <tr>
             <th>Id</th>
-            <th>User Rated</th>
-            <th>Review Author</th>
-            <th>Review</th>
-            <th>Publication Date</th>
-            <th>note</th>
+            <th>Text</th>
+            <th>Publicationdate</th>
+            <th>Note</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
         {% for review in reviews %}
             <tr>
-                <td>{{ review.id }}</td>
-                <td>{{ review.userRated.name }}</td>
-                <td>{{ review.reviewAuthor.name }}</td>
+                <td><a href="{{ path('review_show', { 'id': review.id }) }}">{{ review.id }}</a></td>
                 <td>{{ review.text }}</td>
                 <td>{% if review.publicationDate %}{{ review.publicationDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ review.note }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('review_show', { 'id': review.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('review_edit', { 'id': review.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
             </tr>
         {% endfor %}
         </tbody>
@@ -30,7 +37,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('review_new') }}">Create a new Review</a>
+            <a href="{{ path('review_new') }}">Create a new review</a>
         </li>
     </ul>
 {% endblock %}
